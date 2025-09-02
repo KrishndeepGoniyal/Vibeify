@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router";
 import { Menu, X } from "lucide-react";
-import Logoutbtn from "./logoutbtn";
+import Logoutbtn from "./Logoutbtn";
 
 function Nav() {
   const authStatus = useSelector((state) => state.auth.status);
