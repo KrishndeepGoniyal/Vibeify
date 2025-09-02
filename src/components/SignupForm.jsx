@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { User, Mail, Lock, Eye, EyeOff, UserPlus } from "lucide-react";
 import Authservice from "../services/auth";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { login } from "../features/authSlice";
 
 function SignupForm() {
@@ -157,9 +157,9 @@ function SignupForm() {
         {/* Login Link */}
         <p className="text-sm text-gray-700 text-center">
           Already have an account?{" "}
-          <a href="/login" className="text-green-600 font-medium hover:underline">
+          <Link to="/login" className="text-green-600 font-medium hover:underline">
             Login
-          </a>
+          </Link>
         </p>
       </form>
     </div>

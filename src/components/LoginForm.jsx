@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { User, Lock, Eye, EyeOff, LogIn } from "lucide-react"; 
+import { User, Lock, Eye, EyeOff, LogIn, Link } from "lucide-react"; 
 import Authservice from "../services/auth";
 import { useDispatch } from "react-redux";
 import { login } from "../features/authSlice";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function LoginForm() {
   const dispatch = useDispatch();
@@ -117,12 +117,12 @@ function LoginForm() {
         {/* Signup */}
         <p className="text-sm text-gray-700 text-center">
           Don’t have an account?{" "}
-          <a
-            href="/signup"
+          <Link
+            to="/signup"
             className="text-blue-600 font-medium hover:underline"
           >
             Sign up
-          </a>
+          </Link>
         </p>
       </form>
     </div>
