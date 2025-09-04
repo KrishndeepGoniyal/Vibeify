@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromPlaylist } from "../features/playlistSlice";
-import { LoaderPinwheel } from "lucide-react";
+import { fetchPlaylist, removeFromPlaylist } from "../features/playlistSlice";
+import {  LoaderPinwheel } from "lucide-react";
 
 function PlaylistCard() {
   const dispatch = useDispatch();
@@ -22,6 +22,13 @@ function PlaylistCard() {
     }
   };
 
+useEffect(()=>{
+  if(playlist == [])return;
+  if(removing)return;
+  if(userData.$id){
+    dispatch(fetchPlaylist(userData.$id))
+  }
+},[userData?.$id,dispatch,removing])
   useEffect(() => {
     if (!playlist.length) {
       setSongs([]);
